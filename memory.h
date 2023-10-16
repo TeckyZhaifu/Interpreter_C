@@ -11,7 +11,7 @@
 
 #define GROW_ARRAY(type, pointer, oldCount, newCount) \
     (type*)reallocate(pointer, sizeof(type) * (oldCount), \
-    sizeof(type) * (newcount))
+    sizeof(type) * (newCount))
     /* Fai l`array di dim. corrette in base al tipo con la capacita` calcolata prima*/
     /* reallocate sara` importante per la gestione della memoria*/
 

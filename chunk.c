@@ -1,12 +1,18 @@
 #include <stdlib.h>
 
 #include "chunk.h"
+#include "memory.h"
 
 void initChunk(Chunk* chunk) {
   chunk->count = 0;
   chunk->capacity = 0;
   chunk->code = NULL;
 } /* Array chunk inizializzato a vuoto */
+
+void freeChunk(Chunk* chunk) {
+    FREE_ARRAY(uint8_t, chunk->code, chunk->capacity); /* Gestito da memory.h*/
+    initChunk(chunk); /* Metti tutto a zero*/
+}
 
 void writeChunk(Chunk* chunk, uint8_t byte){
     if (chunk->capacity < chunk->count + 1) {

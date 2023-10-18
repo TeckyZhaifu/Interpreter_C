@@ -19,14 +19,14 @@ void freeChunk(Chunk* chunk) {
 }
 
 void writeChunk(Chunk* chunk, uint8_t byte, int line) {
-    if (chunk->capacity < chunk->count + 1) {
+    if (chunk->capacity < chunk->count + 1) { /*Se la capacity non e` abbastanza*/
         int oldCapacity = chunk->capacity;
-        chunk->capacity = GROW_CAPACITY(oldCapacity);
-        chunk->code = GROW_ARRAY(uint8_t, chunk->code, oldCapacity, chunk->capacity);
+        chunk->capacity = GROW_CAPACITY(oldCapacity); /*Cresci la nuova capacity*/
+        chunk->code = GROW_ARRAY(uint8_t, chunk->code, oldCapacity, chunk->capacity); /*Copia in un nuovo array e aggiungi il nuovo elemento*/
         chunk->lines = GROW_ARRAY(int, chunk->lines, oldCapacity, chunk->capacity);
     }
 
-    chunk->code[chunk->count] = byte;
+    chunk->code[chunk->count] = byte; /*array[index "n"], funziona anche con i puntatori. "Voglio l`elemento n"*/
     chunk->lines[chunk->count] = line;
     chunk->count++; 
 } /* Fai crescere il chunk quando pieno*/

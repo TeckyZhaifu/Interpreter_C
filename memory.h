@@ -5,8 +5,7 @@
 
 #define GROW_CAPACITY(capacity) \ 
     ((capacity) < 8 ? 8 : (capacity) * 2)
-/* Ci serve sapere la nuova capacita` per far crescere l`array per i nuovi elementi*/
-/* Raddoppia capacita`, se e` piccola inizia con 8 bits*/
+/* La nuova capacity sara` un multiplo, se e` piccola aggiungi minimo 8 bits*/
 /* Non capisco questa sintassi, vedere se funziona */
 
 #define GROW_ARRAY(type, pointer, oldCount, newCount) \

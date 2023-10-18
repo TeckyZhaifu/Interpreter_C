@@ -8,7 +8,7 @@ typedef double Value; /*Valori con virgola*/
 typedef struct {
     int capacity;
     int count;
-    Value* values;
+    Value* values; /*Costanti*/
 } ValueArray; /*Un`array dinamico per immagazzinare i valori*/
 
 void initValueArray(ValueArray* array);

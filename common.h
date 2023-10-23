@@ -5,4 +5,6 @@
 #include <stddef.h> /*NULL e size_t*/
 #include <stdint.h> /*uint8_t*/
 
+#define DEBUG_TRACE_EXECUTION /*Log VM*/
+
 #endif

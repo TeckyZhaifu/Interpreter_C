@@ -24,7 +24,7 @@ A quel punto incrementera' ed indichera' una nuova linea.
 */
 typedef struct {
     int offset;
-    int lines;
+    int line;
 } LineStart;
 
 /*
@@ -36,6 +36,7 @@ typedef struct {
     int capacity;
     uint8_t* code;
     ValueArray constants;
+    /*Dati debug*/
     int lineCount;
     int lineCapacity;
     LineStart* lines;
